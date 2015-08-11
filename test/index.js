@@ -13,17 +13,18 @@ describe('Fi Seed Sockets', function () {
     var server = http.createServer();
 
     sockets = require('../');
-    sockets.init({
+    sockets.init(server, {
       basedir: path.normalize(path.join(__dirname, 'sockets')),
-      server: server,
-      debug: true
+      debug: function () {
+        console.log.apply(console, ["Sockets:"].concat([].slice.call(arguments)));
+      }
     });
 
     server.listen(0);
 
     port = server.address().port;
 
-    console.log('Server running on %s', port);
+    console.log("Server running on %s", port);
 
     done();
   });

@@ -48,7 +48,7 @@ The configuration object must have an authorizer function and a route array. The
 - **server**: This is required and must be your App's Server instance.
 
 ### Socket Modules
-The socket modules inside your `sockets` folder must be like this:
+The socket modules inside your *sockets* folder must be like this:
 
 ```js
 module.exports = function (nsp, io) {
@@ -66,16 +66,16 @@ module.exports = function (nsp, io) {
 };
 ```
 
-The exported function will recieve the `namespace` instance as created with `io.of(namespace)` and the current `io` instance. The namespace is created with the module's file name. If the module's file name is `index.js` then it'll be converted to `/`.
+The exported function will recieve the *namespace* instance as created with `io.of(namespace)` and the current `io` instance. The namespace is created with the module's file name. If the module's file name is `index.js` then it'll be converted to `/`.
 
 Folders are also respected, so if a socket module is located in `[...]/sockets/chat/messaging.js` then it's namespace will be `/chat/messaging` and if it's file name is `index.js` inside that same folder then it's namespace will be `/chat`.
 
 ### Properties
 The Sockets component exposes the following properties:
-- **init**: The initialization `Function`. Must be called before anything else with an options parameter as shown in the <a href="#initialization">Initialization</a> example.
+- **init**: The initialization `Function`. Must be called before anything else with an options parameter as shown in the [Initialization](#initialization) example.
 - **io**: The current Socket.IO instance.
-- **modules**: An `Object` that contains all the namespaces as properties.
-- **of**: A convenient `Function` to retrieve the socket modules by its name or namespace path:
+- **modules**: An `Object` that contains all the *namespaces* as properties.
+- **of**: A convenient `Function` to retrieve the socket modules by its name or *namespace* path:
 
   ```js
   /* These will both return the [chat] namespace */
@@ -86,7 +86,7 @@ The Sockets component exposes the following properties:
   sockets.of('chat/messaging').emit('hello', 'everyone!');
   ```
 
-  If passed an empty string or a falsy value then it'll return the root namespace if it exists:
+  If passed an empty string or a falsy value then it'll return the root *namespace* if it exists:
 
   ```js
   /* These will all return the [/] (index.js) namespace */

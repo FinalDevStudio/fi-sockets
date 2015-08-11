@@ -10,10 +10,6 @@ module.exports = function (nsp) {
       console.log("A user disconnected");
     });
 
-    socket.on('salute', function () {
-      socket.emit('salute');
-    });
-
   });
 
 };

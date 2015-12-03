@@ -34,8 +34,9 @@ console.log('Server running on %s', server.address().port);
 The first argument is required and must be your application's Server instance. The socket.io instance will be attached to it.
 
 The second argument is also required and it must be an `Object` with the following parameters:
-- **basedir**: This is required and must be a `String`. This should point to the absolute path where the socket module's scripts are located.
 - **debug**: This parameter can be a `Function` to log with or a `Boolean`. If `true` it will use `console.log`.
+- **basedir**: This is required and must be a `String`. This should point to the absolute path where the socket module's scripts are located.
+- **arguments**: This is optional and can be an `Array` to apply to each socket module right after the default `nsp` and `io` arguments.
 
 #### Example Configuration
 

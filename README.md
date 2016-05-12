@@ -38,6 +38,7 @@ The second argument is also required and it must be an `Object` with the followi
 - **basedir**: This is required and must be a `String`. This should point to the absolute path where the socket module's scripts are located.
 - **arguments**: This is optional and can be an `Array` to apply to each socket module right after the default `nsp` and `io` arguments.
 - **adapter**: This is optional and it must be a socket.io adapter function.
+- **options**: This is optional and it's passed directly to `io` as the options argument.
 
 #### Example Configuration
 

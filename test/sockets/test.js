@@ -1,16 +1,10 @@
 'use strict';
 
-module.exports = function (nsp) {
+module.exports = (nsp) => {
 
-  nsp.on('connection', function (socket) {
+  nsp.on('connection', (socket) => {
 
-    console.log("A user connected");
-
-    socket.on('disconnect', function () {
-      console.log("A user disconnected");
-    });
-
-    socket.on('salute', function () {
+    socket.on('salute', () => {
       socket.emit('salute');
     });
 

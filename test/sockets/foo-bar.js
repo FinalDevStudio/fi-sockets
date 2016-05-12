@@ -4,8 +4,8 @@ module.exports = (nsp) => {
 
   nsp.on('connection', (socket) => {
 
-    socket.on('test', () => {
-      socket.emit('test');
+    socket.on('foo', () => {
+      nsp.emit('bar');
     });
 
   });

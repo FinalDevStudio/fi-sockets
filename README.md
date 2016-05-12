@@ -27,7 +27,7 @@ sockets.init(server, config);
 
 server.listen(0);
 
-console.log('Server running on %s', server.address().port);
+console.log('Server running on %d', server.address().port);
 ```
 
 ### Configuration
@@ -37,21 +37,31 @@ The second argument is also required and it must be an `Object` with the followi
 - **debug**: This parameter can be a `Function` to log with or a `Boolean`. If `true` it will use `console.log`.
 - **basedir**: This is required and must be a `String`. This should point to the absolute path where the socket module's scripts are located.
 - **arguments**: This is optional and can be an `Array` to apply to each socket module right after the default `nsp` and `io` arguments.
+- **adapter**: This is optional and it must be a socket.io adapter function.
 
 #### Example Configuration
 
 ```js
-{
+const redis = require('socket.io-redis');
+const debug = require('debug');
+const path = require('path');
 
-  basedir: path.normalize(path.join(__dirname, 'sockets')),
+module.exports = {
 
-  debug: require('debug')('app:sockets'),
+  basedir: path.normalize(path.join(__dirname, '..', 'sockets')),
+
+  debug: debug('app:sockets'),
 
   arguments: [
     session
-  ]
+  ],
 
-}
+  adapter: redis({
+    host: 'localhost',
+    port: 6379
+  })
+
+};
 ```
 
 ### Socket Modules

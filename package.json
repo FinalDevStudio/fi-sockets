@@ -17,16 +17,16 @@
     "test": "./node_modules/mocha/bin/mocha test/index.js test/adapter.js"
   },
   "dependencies": {
-    "fi-is": "1.1.1",
-    "socket.io": "1.4.6",
+    "fi-is": "^1.1.5",
+    "socket.io": "^1.7.2",
     "walk": "2.3.9"
   },
   "devDependencies": {
     "chai": "3.5.0",
-    "mocha": "2.4.5",
-    "socket.io-client": "1.4.6",
+    "mocha": "^3.2.0",
+    "socket.io-client": "^1.7.2",
     "socket.io-emitter": "1.0.0",
-    "socket.io-redis": "1.0.0"
+    "socket.io-redis": "^2.0.1"
   },
   "bugs": {
     "url": "https://github.com/finaldevstudio/fi-sockets/issues"

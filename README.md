@@ -43,6 +43,8 @@ The second argument is also required and it must be an `Object` with the followi
 #### Example Configuration
 
 ```js
+'use strict';
+
 const redis = require('socket.io-redis');
 const debug = require('debug');
 const path = require('path');
@@ -53,9 +55,7 @@ module.exports = {
 
   debug: debug('app:sockets'),
 
-  arguments: [
-    session
-  ],
+  arguments: [],
 
   adapter: redis({
     host: 'localhost',
@@ -69,14 +69,18 @@ module.exports = {
 The socket modules inside your `config.basedir` folder must be like this:
 
 ```js
-module.exports = function (nsp) {
+'use strict';
 
-  nsp.on('connection', function (socket) {
+const debug = require('deubug')('app:sockets');
 
-    debug("A user connected to " + nsp.name);
+module.exports = nsp => {
 
-    socket.on('disconnect', function () {
-      debug("A user disconnected from " + nsp.name);
+  nsp.on('connection', socket => {
+
+    debug(`A user connected to ${ nsp.name }`);
+
+    socket.on('disconnect', () => {
+      debug(`A user disconnected from ${ nsp.name }`);
     });
 
   });

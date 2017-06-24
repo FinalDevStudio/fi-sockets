@@ -71,7 +71,7 @@ The socket modules inside your `config.basedir` folder must be like this:
 ```js
 'use strict';
 
-const debug = require('deubug')('app:sockets');
+const debug = require('debug')('app:sockets');
 
 module.exports = nsp => {
 

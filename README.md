@@ -10,24 +10,24 @@ npm install --save fi-sockets
 ## Usage
 
 ```js
-var sockets = require('fi-sockets');
+const sockets = require('fi-sockets');
 ```
 
 ### Initialization
 You must call it with your App's Server instance and a configuration object:
 
 ```js
-var sockets = require('fi-sockets');
-var http = require('http');
-var path = require('path');
+const sockets = require('fi-sockets');
+const http = require('http');
+const path = require('path');
 
-var server = http.createServer();
+const server = http.createServer();
 
 sockets.init(server, config);
 
 server.listen(0);
 
-console.log('Server running on %d', server.address().port);
+console.log(`Server running on ${ server.address().port }`);
 ```
 
 ### Configuration

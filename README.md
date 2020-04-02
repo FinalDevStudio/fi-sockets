@@ -1,3 +1,7 @@
+---
+### No longer maintained.
+---
+
 # Fi Sockets
 Sockets module loader for socket.io Node.js applications.
 
